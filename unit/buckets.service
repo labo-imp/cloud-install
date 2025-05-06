@@ -1,0 +1,12 @@
+[Unit]
+Description=buckets
+
+[Service]
+Type=forking
+ExecStart=/home/$USER/install/linkear_buckets.sh
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target
