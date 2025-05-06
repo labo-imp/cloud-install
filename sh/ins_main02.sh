@@ -8,3 +8,4 @@
 
 /home/$USER/cloud-install/sh/ins_buckets.sh
 /home/$USER/cloud-install/sh/ins_expshared.sh
+/home/$USER/cloud-install/sh/ins_datasets.sh
