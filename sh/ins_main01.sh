@@ -7,19 +7,20 @@ rm -rf  /home/$USER/install
 mkdir  -p  /home/$USER/install
 mkdir  -p  /home/$USER/log
 
+sudo  apt-get --yes  install  git
+
 repo="https://github.com/labo-imp/cloud-install"
 github_user="labo-imp"
 github_repo="cloud-install"
 
 
 # clono el repo de instalacion
-sudo  apt-get --yes  install  git
 cd
 rm -rf cloud-install
 git clone  https://github.com/"$github_user"/"$github_repo".git   cloud-install
 chmod u+x  ./cloud-install/sh/*
-
 cp /home/$USER/cloud-install/sh/common_austral.sh  /home/$USER/cloud-install/sh/common.sh
+
 source  /home/$USER/cloud-install/sh/common.sh
 bitacora   "START  instalar.sh"
 
