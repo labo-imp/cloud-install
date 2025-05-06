@@ -11,3 +11,4 @@
 /home/$USER/cloud-install/sh/ins_datasets.sh
 
 /home/$USER/cloud-install/sh/ins_rlang.sh
+/home/$USER/cloud-install/sh/ins_rlang_paguetes.sh
