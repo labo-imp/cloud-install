@@ -1,4 +1,5 @@
 #!/bin/bash
+# fecha revision   2025-05-06  13:01
 
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get update
 
@@ -12,7 +13,11 @@ github_repo="cloud-install"
 
 
 # clono el repo de instalacion
+sudo  apt-get --yes  install  git
+cd
+rm -rf cloud-install
 git clone  https://github.com/"$github_user"/"$github_repo".git   cloud-install
+chmod u+x  ./cloud-install/sh/*
 
 cp /home/$USER/cloud-install/sh/common_austral.sh  /home/$USER/cloud-install/sh/common.sh
 source  /home/$USER/cloud-install/sh/common.sh
@@ -20,7 +25,7 @@ bitacora   "START  instalar.sh"
 
 # tmux vim
 /home/$USER/cloud-install/sh/ins_vimtmux.sh
-cp /home/$USER/cloud-install/cfg/vim.rc  /home/$USER/.vimrc
+cp /home/$USER/cloud-install/cfg/vimrc  /home/$USER/.vimrc
 cp /home/$USER/cloud-install/cfg/tmux.conf  /home/$USER/.tmux.conf
 
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# fecha revision   2025-05-06  13:01
 
 logito="ins_system.txt"
 # si ya corrio esta seccion, exit
