@@ -15,13 +15,13 @@ paq11 <- c("duckdb","duckplyr","polars","DBI","RMariaDB","filelock")
 
 paq <- c( paq1, paq2, paq3, paq4, paq5, paq6, paq7, paq8, paq9, paq10, paq11 )
 
-install.packages( paq,  dependencies= TRUE, lib="/home/$USER/.local/lib/R/site-library", Ncpus= 4)
+install.packages( paq,  dependencies= TRUE,  Ncpus= 4)
 
 library( "devtools" )
 install_github( "AppliedDataSciencePartners/xgboostExplainer")
 install_github( "NorskRegnesentral/shapr", dependencies = TRUE)
 
-devtools::install_url('https://github.com/catboost/catboost/releases/download/v1.2.5/catboost-R-Linux-1.2.5.tgz', INSTALL_opts = c("--no-multiarch", "--no-test-load"))
+devtools::install_url('https://github.com/catboost/catboost/releases/download/v1.2.8/catboost-R-Linux-1.2.8.tgz', INSTALL_opts = c("--no-multiarch", "--no-test-load"))
 devtools::install_github("ManuelHentschel/vscDebugger")
 
 quit( save="no" )
