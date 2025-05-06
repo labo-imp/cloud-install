@@ -15,7 +15,7 @@ paq11 <- c("duckdb","duckplyr","polars","DBI","RMariaDB","filelock")
 
 paq <- c( paq1, paq2, paq3, paq4, paq5, paq6, paq7, paq8, paq9, paq10, paq11 )
 
-install.packages( paq,  dependencies= TRUE, lib="/home/$USER/.local/lib/R/site-library", Ncpus= 4)
+install.packages( paq,  dependencies= TRUE, Ncpus= 4)
 
 library( "devtools" )
 install_github( "AppliedDataSciencePartners/xgboostExplainer")
