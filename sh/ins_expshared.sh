@@ -14,6 +14,8 @@ source  /home/$USER/cloud-install/sh/common.sh
 export smb_shared=expshared-uba
 
 envsubst < /home/$USER/cloud-install/sh/shareddirs.sh   >   /home/$USER/install/shareddirs.sh
+chmod u+x  /home/$USER/install/shareddirs.sh
+
 envsubst < /home/$USER/cloud-install/cfg/expshared_cred.txt   >   /home/$USER/install/expshared_cred.txt
 
 envsubst < /home/$USER/cloud-install/unit/shareddirs.service   >   /home/$USER/install/shareddirs.service
