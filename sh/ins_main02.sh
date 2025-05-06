@@ -12,4 +12,4 @@
 
 /home/$USER/cloud-install/sh/ins_rlang.sh
 /home/$USER/cloud-install/sh/ins_rstudio.sh
-/home/$USER/cloud-install/sh/ins_rlang_paguetes.sh
+/home/$USER/cloud-install/sh/ins_rlang_paquetes.sh
