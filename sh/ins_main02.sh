@@ -5,3 +5,5 @@
 /home/$USER/cloud-install/sh/ins_gnome.sh
 
 /home/$USER/cloud-install/sh/ins_sysstat.sh
+
+/home/$USER/cloud-install/sh/ins_buckets.sh
