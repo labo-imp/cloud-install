@@ -32,7 +32,7 @@ logfile="/home/$USER/install/log_install.txt"
 MIHOST=$(echo $HOSTNAME | /usr/bin/cut -d . -f1)
 
 bitacora () {
-  local fecha=\$(date +"%Y%m%d %H%M%S")
+  local fecha=$(date +"%Y%m%d %H%M%S")
 
-  echo "\$fecha""\$tabulador""\$1"  >>  "\$logfile"
+  echo "$fecha""$tabulador""$1"  >>  "$logfile"
 }
