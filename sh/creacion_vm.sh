@@ -1,6 +1,7 @@
 #!/bin/bash
 
 gcloud compute instances create instance-instalacion \
+    --project=cranr001-150423 \
     --zone=us-west4-c \
     --machine-type=e2-standard-4 \
     --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
