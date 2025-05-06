@@ -22,8 +22,8 @@ github_user="labo-imp"
 repo_name="labo2025ros"
 
 
-mlflow_usuario="labo2025ros"
-mlflow_clave="constructivism"
+EXPORT mlflow_usuario="labo2025ros"
+EXPORT mlflow_clave="constructivism"
 
 
 
