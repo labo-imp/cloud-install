@@ -7,3 +7,4 @@
 /home/$USER/cloud-install/sh/ins_sysstat.sh
 
 /home/$USER/cloud-install/sh/ins_buckets.sh
+/home/$USER/cloud-install/sh/ins_expshared.sh
