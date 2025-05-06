@@ -4,4 +4,4 @@
 /home/$USER/cloud-install/sh/ins_system.sh
 /home/$USER/cloud-install/sh/ins_gnome.sh
 
-
+/home/$USER/cloud-install/sh/ins_sysstat.sh
