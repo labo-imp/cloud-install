@@ -30,3 +30,6 @@ fi
 
 #    --project=cranr001-150423 \
 #    --service-account=109985757264-compute@developer.gserviceaccount.com \
+
+
+gcloud compute ssh "$USER"@instance-instalacion --zone=us-west4-c -- bash -s < a.sh
