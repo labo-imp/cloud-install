@@ -13,3 +13,7 @@
 /home/$USER/cloud-install/sh/ins_rlang.sh
 /home/$USER/cloud-install/sh/ins_rstudio.sh
 /home/$USER/cloud-install/sh/ins_rlang_paquetes.sh
+
+
+/home/$USER/cloud-install/sh/ins_python.sh
+/home/$USER/cloud-install/sh/ins_julia.sh
