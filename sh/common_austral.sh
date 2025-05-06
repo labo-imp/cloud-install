@@ -1,4 +1,5 @@
 #!/bin/bash
+# fecha revision   2025-05-06  13:01
 
 webfiles="https://storage.googleapis.com/open-courses/austral2025-af91"
 
