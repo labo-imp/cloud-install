@@ -1,0 +1,12 @@
+[Unit]
+Description=shared dirs
+
+[Service]
+Type=oneshot
+ExecStart=/home/$USER/install/shareddirs.sh
+WorkingDirectory=/home/$USER/install
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target
