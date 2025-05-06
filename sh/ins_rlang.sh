@@ -11,7 +11,7 @@ logito="ins_rlang.txt"
 
 source  /home/$USER/cloud-install/sh/common.sh
 
-# instalar  R   version: 4.5 | released: 2025-04-11
+# instalar  R   version: 4.4.3 | released: 2025-02-28
 # Documentacion  https://cran.r-project.org/
 
 cd
@@ -21,7 +21,6 @@ mkdir  -p $R_LIBS_USER
 cat > /home/$USER/.Renviron  <<FILE
 R_LIBS_USER=$R_LIBS_USER
 FILE
-
 
 
 # update indices
