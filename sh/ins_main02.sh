@@ -17,3 +17,5 @@
 
 /home/$USER/cloud-install/sh/ins_python.sh
 /home/$USER/cloud-install/sh/ins_julia.sh
+
+/home/$USER/cloud-install/sh/ins_jupyterlab.sh
