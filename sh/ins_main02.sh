@@ -19,3 +19,4 @@
 /home/$USER/cloud-install/sh/ins_julia.sh
 
 /home/$USER/cloud-install/sh/ins_jupyterlab.sh
+/home/$USER/cloud-install/sh/ins_kernels.sh
