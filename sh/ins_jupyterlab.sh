@@ -38,11 +38,10 @@ jupyter labextension install  @jupyterlab/toc
 # instalo git para Jupyter Lab
 pip3 install --upgrade  jupyterlab  jupyterlab-git
 
-bitacora   "Jupyter Lab"
 # por supuesto, la instalacion de Jupyter Lab ya instala el kernel de Python
 
-
 # para que se pueda ingresar a  Jupyter en forma remota
+mkdir -p /home/$USER/.jupyter/
 cp  /home/$USER/cloud-install/py/jupyter_server_config.py   /home/$USER/.jupyter/jupyter_server_config.py
 
 mkdir /home/$USER/.venv/.jupyter
