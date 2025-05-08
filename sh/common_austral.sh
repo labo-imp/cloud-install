@@ -18,11 +18,11 @@ export zulipurl="https://austral2025.zulip.rebelare.com/api/v1/messages"
 
 kaggleprueba="100_kaggle_prueba-ba.r"
 
-github_user="labo-imp"
-repo_name="labo2025ros"
+export github_user="labo-imp"
+export repo_name="labo2025ros"
 
-github_catedra_user="labo-imp"
-github_catedra_repo="labo2025ros"
+export github_catedra_user="labo-imp"
+export github_catedra_repo="labo2025ros"
 
 
 export mlflow_usuario="labo2025ros"
