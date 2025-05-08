@@ -49,7 +49,7 @@ generarmodelo <- function( param )
 
   # solo le envio estimulo a los registros
   #  con probabilidad de BAJA+2 mayor  a  1/40
-  tb_prediccion[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
+  tb_prediccion[, Predicted := as.numeric(prob > 1 / 40)]
 
   # archivo de salida
   contador <- getandincrement("contador.yml")
