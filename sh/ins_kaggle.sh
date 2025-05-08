@@ -12,7 +12,7 @@ logito="ins_kaggle.txt"
 R_LIBS_USER=/home/$USER/.local/lib/R/site-library
 export R_LIBS_USER
 
-Rscript --vanilla  /home/$USER/cloud-install/r/100_kaggle_prueba-rosario.r
+Rscript --vanilla  /home/$USER/cloud-install/r/102_kaggle_prueba-rosario.r
 
 fecha=$(date +"%Y%m%d %H%M%S")
 echo $fecha > /home/$USER/log/$logito
