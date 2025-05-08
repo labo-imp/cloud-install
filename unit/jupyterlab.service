@@ -1,0 +1,11 @@
+[Unit]
+Description=jupyterlab
+[Service]
+Type=simple
+ExecStart=/home/$USER/install/jupyterlab.sh
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target

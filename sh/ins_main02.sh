@@ -10,13 +10,18 @@
 /home/$USER/cloud-install/sh/ins_expshared.sh
 /home/$USER/cloud-install/sh/ins_datasets.sh
 
-/home/$USER/cloud-install/sh/ins_rlang.sh
-/home/$USER/cloud-install/sh/ins_rstudio.sh
-/home/$USER/cloud-install/sh/ins_rlang_paquetes.sh
-
-
+/home/$USER/cloud-install/sh/ins_rworld.sh
 /home/$USER/cloud-install/sh/ins_python.sh
 /home/$USER/cloud-install/sh/ins_julia.sh
 
 /home/$USER/cloud-install/sh/ins_jupyterlab.sh
 /home/$USER/cloud-install/sh/ins_kernels.sh
+
+/home/$USER/cloud-install/sh/ins_memcpu.sh
+/home/$USER/cloud-install/sh/ins_mlflow.sh
+/home/$USER/cloud-install/sh/ins_cambiar_claves.sh
+
+
+
+
+/home/$USER/cloud-install/sh/ins_gnome_apps.sh
