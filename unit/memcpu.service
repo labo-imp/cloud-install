@@ -1,0 +1,14 @@
+[Unit]
+Description=memcpu
+After=display-manager.service
+Wants=display-manager.service
+
+[Service]
+Type=simple
+ExecStart=/home/$USER/install/memcpu.sh
+WorkingDirectory=/home/$USER/log/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=display-manager.service

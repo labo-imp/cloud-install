@@ -1,0 +1,9 @@
+[Unit]
+Description=alive mlflow job
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/Rscript /home/$USER/install/alive_mlflow.r
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER

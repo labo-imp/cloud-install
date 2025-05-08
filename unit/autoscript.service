@@ -1,0 +1,13 @@
+[Unit]
+Description=autoscript
+Requires=buckets.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/$USER/install/autoscript.sh
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target
