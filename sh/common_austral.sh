@@ -13,7 +13,7 @@ dataset3="analistasr_competencia_2025.csv.gz"
 dataset4="dataset_pequeno.csv"
 pseudopublic="list"
 
-export zulipbot="GoogleCloud-bot@austral2024.zulip.rebelare.com:01VXAC02ESF98VlImLjZIysfPtORMCsX"
+export zulipbot="GoogleCloud-bot@austral2025.zulip.rebelare.com:01VXAC02ESF98VlImLjZIysfPtORMCsX"
 export zulipurl="https://austral2025.zulip.rebelare.com/api/v1/messages"
 
 kaggleprueba="100_kaggle_prueba-ba.r"
