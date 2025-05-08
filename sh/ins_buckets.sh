@@ -3,7 +3,7 @@
 
 logito="ins_buckets.txt"
 # si ya corrio esta seccion, exit
-[ -e "/home/$USER/log/$logito" ] && exit 1
+[ -e "/home/$USER/log/$logito" ] && exit 0
 
 # requiero que architecture este instalado
 [ ! -e "/home/$USER/log/ins_architecture.txt" ] && exit 0
