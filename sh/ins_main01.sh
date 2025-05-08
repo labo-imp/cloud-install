@@ -24,6 +24,7 @@ chmod u+x  /home/$USER/cloud-install/direct/*.sh
 
 # despersonalizacion
 cp /home/$USER/cloud-install/sh/common_austral.sh   /home/$USER/cloud-install/sh/common.sh
+cp /home/$USER/cloud-install/sh/common.sh /home/$USER/install/
 
 # copia de direct
 cp /home/$USER/cloud-install/direct/*   /home/$USER/install/
