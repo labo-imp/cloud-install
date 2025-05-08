@@ -18,6 +18,8 @@ export zulipurl="https://austral2025.zulip.rebelare.com/api/v1/messages"
 
 kaggleprueba="100_kaggle_prueba-ba.r"
 
+kaggle_competencia="labo-i-2025-rosario"
+
 export github_catedra_user="labo-imp"
 export github_catedra_repo="labo2025ros"
 
