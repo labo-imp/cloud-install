@@ -1,7 +1,7 @@
 #!/bin/bash
 # fecha revision   2025-05-06  13:01
 
-logito="ins_python.txt"
+logito="ins_pyworld.txt"
 # si ya corrio esta seccion, exit
 [ -e "/home/$USER/log/$logito" ] && exit 1
 
@@ -23,6 +23,12 @@ source /home/$USER/.bashrc
 sudo  apt-get update
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get --yes install \
         python3  python3-pip  python3-dev  ipython3  python3.13-venv
+
+
+python3  /home/$USER/cloud-install/py/test_python.py  /home/$USER/log/ins_python.txt
+
+
+[ ! -e "/home/$USER/log/ins_python.txt" ] && exit 1
 
 # creo el Virtual Environment
 cd

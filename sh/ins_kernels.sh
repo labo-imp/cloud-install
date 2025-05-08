@@ -6,9 +6,9 @@ logito="ins_kernels.txt"
 [ -e "/home/$USER/log/$logito" ] && exit 1
 
 # requiero que los lenguajes y jupyterlab esten instalados
-[ ! -e "/home/$USER/log/ins_python.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_pyworld.txt" ] && exit 1
 [ ! -e "/home/$USER/log/ins_rworld.txt" ] && exit 1
-[ ! -e "/home/$USER/log/ins_julia.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_jlworld.txt" ] && exit 1
 [ ! -e "/home/$USER/log/ins_jupyterlab.txt" ] && exit 1
 
 
