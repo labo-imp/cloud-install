@@ -10,7 +10,7 @@ logito="ins_zulip.txt"
 
 
 source  /home/$USER/cloud-install/sh/common.sh
-source  /home/$USER/install/sh/secrets.sh
+source  /home/$USER/install/secrets.sh
 
 # cambio in-situ zulip_email es el del usuario
 sed -i  's/email/'"$zulip_email"'/g'  /home/$USER/install/zulip_enviar.sh
