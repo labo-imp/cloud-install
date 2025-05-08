@@ -3,7 +3,7 @@
 
 logito="ins_jlworld.txt"
 # si ya corrio esta seccion, exit
-[ -e "/home/$USER/log/$logito" ] && exit 1
+[ -e "/home/$USER/log/$logito" ] && exit 0
 
 # requiero que el system este instalado
 [ ! -e "/home/$USER/log/ins_system.txt" ] && exit 1
