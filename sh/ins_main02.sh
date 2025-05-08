@@ -27,8 +27,8 @@ fi
 
 # los lenguajes
 /home/$USER/cloud-install/sh/ins_rworld.sh
-/home/$USER/cloud-install/sh/ins_python.sh
-/home/$USER/cloud-install/sh/ins_julia.sh
+/home/$USER/cloud-install/sh/ins_pyworld.sh
+/home/$USER/cloud-install/sh/ins_jlworld.sh
 
 /home/$USER/cloud-install/sh/ins_jupyterlab.sh
 /home/$USER/cloud-install/sh/ins_kernels.sh
