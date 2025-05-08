@@ -3,7 +3,7 @@
 
 # verifico el repo de la catedra
 /home/$USER/cloud-install/sh/ins_common.sh
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "ABORTANDO. Falla catastrofica en common.sh"
     exit 1
 fi
@@ -12,14 +12,14 @@ fi
 # lo minimo necesario antes de secrets
 /home/$USER/cloud-install/sh/ins_architecture.sh
 /home/$USER/cloud-install/sh/ins_buckets.sh
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "ABORTANDO. Falla catastrofica buckets NO esta funcionando"
     exit 1
 fi
 
 
 /home/$USER/cloud-install/sh/ins_secrets.sh
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "ABORTANDO. Falla catastrofica con los secretos  kaggle.json  secrets.sh"
     exit 1
 fi
