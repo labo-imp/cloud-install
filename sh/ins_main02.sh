@@ -49,6 +49,6 @@ fi
 /home/$USER/cloud-install/sh/ins_cambiar_claves.sh
 
 
-
+/home/$USER/cloud-install/sh/ins_zulip.sh
 
 /home/$USER/cloud-install/sh/ins_gnome_apps.sh
