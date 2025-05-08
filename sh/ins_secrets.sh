@@ -69,17 +69,35 @@ if ! grep -q github_nombre /home/$USER/buckets/b1/secrets.sh; then
 fi
 
 
+cp  /home/$USER/buckets/b1/secrets.sh   /home/$USER/install/
+chmod u+x  /home/$USER/install/secrets.sh
+
+
+source  /home/$USER/buckets/b1/secrets.sh
+
+rm -rf  /home/$USER/tmp
+mkdir -p /home/$USER/tmp
+
+wget https://github.com/$github_usuario-O  /home/$USER/tmp/caca
+if [ ! $? -eq 0 ]; then
+  rm -rf  /home/$USER/tmp
+  echo "Error Fatal: no existe el usuario $github_usuario  en GitHub"
+  exit 1
+fi
+
+
+wget https://github.com/$github_usuario/$github_catedra_repo
+if [ ! $? -eq 0 ]; then
+  rm -rf  /home/$USER/tmp
+  echo "Error Fatal: no existe el repo $github_usuario/$github_catedra_repo  en GitHub"
+  exit 1
+fi
 
 
 rm -rf /home/$USER/.kaggle
 mkdir -p /home/$USER/.kaggle
 cp  /home/$USER/buckets/b1/kaggle.json   /home/$USER/.kaggle/
 chmod 600 /home/$USER/.kaggle/kaggle.json
-
-
-cp  /home/$USER/buckets/b1/secrets.sh   /home/$USER/install/
-chmod u+x  /home/$USER/install/secrets.sh
-
 
 
 
