@@ -1,0 +1,10 @@
+[Unit]
+Description=halfswap
+
+[Service]
+Type=oneshot
+ExecStart=/home/$USER/install/halfswap.sh
+WorkingDirectory=/home/$USER/
+
+[Install]
+WantedBy=default.target
