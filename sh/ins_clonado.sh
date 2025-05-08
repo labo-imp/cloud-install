@@ -13,7 +13,7 @@ MIHOST=$(echo \$HOSTNAME | /usr/bin/cut -d . -f1)
 
 
 # mi repositorio
-cd  /home/$USER/$repo_name
+cd  /home/$USER/$github_catedra_repo
 
 git remote  add  upstream  https://github.com/labo-imp/labo2024ba
 

@@ -36,11 +36,15 @@ sudo DEBIAN_FRONTEND=noninteractive add-apt-repository --yes "deb https://cloud.
 
 sudo DEBIAN_FRONTEND=noninteractive  apt install --yes --no-install-recommends r-base  r-base-dev  r-cran-devtools
 
+Rscript --verbose  /home/$USER/cloud-install/r/test_rlang.r
+
 bitacora   "rlang"
 
 #------------------------------------------------------------------------------
 # Instalo RStudio Server    Version:  2024.12.1 | Released:  2025-02-13--------
 # Doc  https://rstudio.com/products/rstudio/download-server/debian-ubuntu/
+
+[ ! -e "/home/$USER/log/ins_rlang.txt" ] && exit 1
 
 cd
 rstudiopack="rstudio-server-2024.12.1-563-amd64.deb"
