@@ -22,7 +22,7 @@ rsync -a /home/$USER/repos/catedra/   /home/$USER/buckets/b1/repos/catedra/  --d
 
 
 # mi repositorio ----------------------
-cd  /home/$USER/$repo_name
+cd  /home/$USER/$github_catedra_repo
 
 # catedra nunca tiene problemas
 git checkout catedra
@@ -57,7 +57,7 @@ git push  origin  main
 
 # LENTA copia al bucket
 git checkout $MIHOST
-rsync -a /home/$USER/$repo_name/   /home/$USER/buckets/b1/repos/$repo_name/  --delete-after  &
+rsync -a /home/$USER/$github_catedra_repo/   /home/$USER/buckets/b1/repos/$github_catedra_repo/  --delete-after  &
 
 
 echo "Esperando 30 segundos"

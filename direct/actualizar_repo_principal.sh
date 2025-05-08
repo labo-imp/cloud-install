@@ -4,7 +4,7 @@ source  /home/$USER/install/common.sh
 
 MIHOST=\$(echo \$HOSTNAME | /usr/bin/cut -d . -f1)
 
-cd  /home/$USER/$repo_name
+cd  /home/$USER/$github_catedra_repo
 
 # upstream a  catedra
 git checkout catedra
