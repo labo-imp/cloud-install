@@ -26,7 +26,7 @@ cd
 . /home/$USER/.bashrc
 source  /home/$USER/.venv/bin/activate
 
-
+# corro script de Julia
 /home/$USER/.juliaup/bin/julia  /home/$USER/cloud-install/jl/test_julia.jl  /home/$USER/log/ins_julia.txt
 
 [ ! -e "/home/$USER/log/ins_julia.txt" ] && exit 1

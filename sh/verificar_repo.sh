@@ -29,7 +29,7 @@ cd /home/$USER/$github_catedra_repo/
 git rev-parse
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: git rev-parse fallo"
-  exit
+  exit 1
 fi
 
 git status
