@@ -21,9 +21,8 @@ source /home/$USER/.venv/bin/activate
 if  [[ $hacersubmit  == "TRUE" ]] ; then
   kaggle competitions submit -c  $kaggle_competencia \
   -f  $archivo \
-  -m   "\
-  \$comentario \
-  "  > /dev/null
+  -m   "$comentario" \
+   > /dev/null
 fi
 
 /home/$USER/install/list  \$archivo
