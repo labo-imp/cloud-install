@@ -3,7 +3,7 @@
 
 logito="ins_kernels.txt"
 # si ya corrio esta seccion, exit
-[ -e "/home/$USER/log/$logito" ] && exit 1
+[ -e "/home/$USER/log/$logito" ] && exit 0
 
 # requiero que los lenguajes y jupyterlab esten instalados
 [ ! -e "/home/$USER/log/ins_pyworld.txt" ] && exit 1

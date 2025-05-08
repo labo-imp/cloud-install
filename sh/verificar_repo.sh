@@ -4,23 +4,23 @@ source  /home/$USER/install/common.sh
 
 if [ ! -d /home/$USER/$github_catedra_repo ]; then
     echo "Error Fatal : No existe la carpeta del repositorio /home/$USER/$github_catedra_repo"
-    exit
+    exit 1
 fi
 
 if [ ! -d /home/$USER/$github_catedra_repo/src ]; then
     echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$github_catedra_repo/src"
-    exit
+    exit 1
 fi
 
 
 if [ ! -d /home/$USER/$github_catedra_repo/src/rpart ]; then
     echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$github_catedra_repo/src/rpart"
-    exit
+    exit 1
 fi
 
 if [ ! -f /home/$USER/$github_catedra_repo/src/rpart/z101_PrimerModelo.R ]; then
     echo "Error Fatal : No existe el archivo  /home/$USER/$github_catedra_repo/src/rpart/z101_PrimerModelo.R"
-    exit
+    exit 1
 fi
 
 
@@ -35,25 +35,25 @@ fi
 git status
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: git status fallo"
-  exit
+  exit 1
 fi
 
 git branch --all
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: git branch -all  fallo"
-  exit
+  exit 1
 fi
 
 git rev-parse --verify   main
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: No existe branch  main"
-  exit
+  exit 1
 fi
 
 git rev-parse --verify   origin/main
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: No existe branch  origin/main"
-  exit
+  exit 1
 fi
 
 # git rev-parse --verify   instance-instalacion
@@ -66,13 +66,13 @@ fi
 git ls-remote --exit-code --heads origin  main
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: No existe main en remote"
-  exit
+  exit 1
 fi
 
 git ls-remote --exit-code --heads origin  catedra
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: No existe catedra en remote"
-  exit
+  exit 1
 fi
 
 # git ls-remote --exit-code --heads origin  instance-instalacion
@@ -85,19 +85,19 @@ fi
 git fetch upstream
 if [ ! $? -eq 0 ]; then 
   echo "Error Fatal: Fallo  git fetch upstream"
-  exit
+  exit 1
 fi
 
 
 if [ ! -f /home/$USER/install/100_kaggle_prueba.r ]; then
     echo "Error : No existe el archivo  /home/$USER/install/100_kaggle_prueba.r"
-    exit
+    exit 1
 fi
 
 cp /home/$USER/install/100_kaggle_prueba.r  /home/$USER/$github_catedra_repo/src/rpart
 if [ ! $? -eq 0 ]; then 
   echo "Error : No se pudo copiar /home/$USER/install/100_kaggle_prueba.r"
-  exit
+  exit 1
 fi
 
 cd /home/$USER/$github_catedra_repo/
@@ -107,31 +107,31 @@ MIHOST=\$(echo \$HOSTNAME | /usr/bin/cut -d . -f1)
 git checkout catedra
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git checkout catedra"
-  exit
+  exit 1
 fi
 
 git pull origin catedra
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git pull origin catedra"
-  exit
+  exit 1
 fi
 
 git fetch upstream
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git fetch upstream"
-  exit
+  exit 1
 fi
 
 git merge  -X theirs   upstream/main  -m "sync upstream/main to catedra"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X theirs   upstream/main  -m 'sync upstream/main to catedra' "
-  exit
+  exit 1
 fi
 
 git push  origin  catedra
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git push  origin  catedra "
-  exit
+  exit 1
 fi
 
 #--------
@@ -139,31 +139,31 @@ fi
 git checkout main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git checkout main"
-  exit
+  exit 1
 fi
 
 git pull origin main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git pull origin main"
-  exit
+  exit 1
 fi
 
 git merge  -X theirs  catedra   -m "catedra domina a main"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X theirs  catedra   -m 'catedra domina a main'"
-  exit
+  exit 1
 fi
 
 git push --set-upstream origin  main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git push --set-upstream origin  main"
-  exit
+  exit 1
 fi
 
 git checkout main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git checkout main"
-  exit
+  exit 1
 fi
 
 
@@ -171,31 +171,31 @@ fi
 git checkout \$MIHOST
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git checkout \$MIHOST"
-  exit
+  exit 1
 fi
 
 git pull origin \$MIHOST
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git pull origin \$MIHOST"
-  exit
+  exit 1
 fi
 
 git merge  -X theirs  catedra   -m "catedra domina  a MIHOST"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X theirs  catedra   -m 'catedra domina  a MIHOST'"
-  exit
+  exit 1
 fi
 
 git merge  -X ours    main      -m "MIHOST domina  a main"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X ours    main      -m 'MIHOST domina  a main'"
-  exit
+  exit 1
 fi
 
 git push  origin  \$MIHOST
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git push  origin  \$MIHOST"
-  exit
+  exit 1
 fi
 
 git checkout main
@@ -203,13 +203,13 @@ git checkout main
 git merge  -X theirs  \$MIHOST   -m "MIHOST domina  a main"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X theirs  \$MIHOST   -m 'MIHOST domina  a main'"
-  exit
+  exit 1
 fi
 
 git push  origin  main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git push  origin  main"
-  exit
+  exit 1
 fi
 
 
@@ -218,13 +218,13 @@ git checkout \$MIHOST
 git add /home/$USER/$github_catedra_repo/src/rpart/100_kaggle_prueba.r
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git add /home/$USER/$github_catedra_repo/src/rpart/100_kaggle_prueba.r"
-  exit
+  exit 1
 fi
 
 git commit -m "rpart/100_kaggle_prueba.r"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git commit -m 'rpart/100_kaggle_prueba.r'"
-  exit
+  exit 1
 fi
 
 git push   origin  \$MIHOST
@@ -232,13 +232,13 @@ git checkout main
 git merge  -X theirs  \$MIHOST   -m "MIHOST domina  a main"
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git merge  -X theirs  \$MIHOST   -m 'MIHOST domina  a main'"
-  exit
+  exit 1
 fi
 
 git push  origin  main
 if [ ! $? -eq 0 ]; then 
   echo "Fatal Error : git push  origin  main"
-  exit
+  exit 1
 fi
 
 git checkout \$MIHOST

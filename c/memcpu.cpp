@@ -108,7 +108,7 @@ int files_lastactivity(int fullscan, time_t  t0)
 {
     char* env_user = getenv("USER");
     static const char * dires[] = { "/dev/pts", ".virtual_documents", ".local/share/rstudio", 
-      ".local/share/jupyter", ".vscode", ".vscode-R", ".config/Code", "dmeyf2024" };
+      ".local/share/jupyter", ".vscode", ".vscode-R", ".config/Code", "labo2025ros" };
 
     int tope = sizeof(dires)/sizeof(char*);
 
