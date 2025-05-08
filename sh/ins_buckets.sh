@@ -49,6 +49,8 @@ sudo  systemctl start  buckets
 
 bitacora   "buckets"
 
+sleep 10
+
 # finalizo
 systemctl is-active --quiet buckets.service
 if [ $? -eq 0 ]; then
