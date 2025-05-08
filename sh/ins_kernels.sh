@@ -5,8 +5,12 @@ logito="ins_kernels.txt"
 # si ya corrio esta seccion, exit
 [ -e "/home/$USER/log/$logito" ] && exit 1
 
-# requiero que el system este instalado
+# requiero que los lenguajes y jupyterlab esten instalados
+[ ! -e "/home/$USER/log/ins_python.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_rworld.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_julia.txt" ] && exit 1
 [ ! -e "/home/$USER/log/ins_jupyterlab.txt" ] && exit 1
+
 
 source  /home/$USER/cloud-install/sh/common.sh
 
@@ -70,6 +74,13 @@ sudo  systemctl start jupyterlab
 
 bitacora   "kernels"
 
-# grabo
-fecha=$(date +"%Y%m%d %H%M%S")
-echo $fecha > /home/$USER/log/$logito
+systemctl is-active --quiet jupyterlab.service
+if [ $? -eq 0 ]; then
+    echo "servicio jupyterlab no esta funcionando"
+    exit 1
+else
+  fecha=$(date +"%Y%m%d %H%M%S")
+  echo $fecha > /home/$USER/log/$logito
+  exit 0
+fi
+
