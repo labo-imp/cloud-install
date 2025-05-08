@@ -69,6 +69,15 @@ sudo  rstudio-server restart
 # rstudio-server status
 gcloud compute firewall-rules create rstudio --allow tcp:80  --source-tags=instance-instalacion --source-ranges=0.0.0.0/0 --description="rstudio"
 
+
+systemctl is-active --quiet rstudio-server
+if [ $? -eq 0 ]; then
+    echo "servicio rstudio-server no esta funcionando"
+else
+  fecha=$(date +"%Y%m%d %H%M%S")
+  echo $fecha > /home/$USER/log/ins_rstudio.txt
+fi
+
 bitacora   "rstudio"
 
 #------------------------------------------------------------------------------
@@ -76,6 +85,8 @@ bitacora   "rstudio"
 # instalacion de  innumerables paquetes de R
 # esta es la parte que mas tiempo insume del script
 
+[ ! -e "/home/$USER/log/ins_rlang.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_rstudio.txt" ] && exit 1
 
 # Primera instalacion de paquetes de R , 5 minutos
 Rscript --verbose  /home/$USER/cloud-install/r/instalar_paquetes_1.r  | sudo tee -a /home/$USER/install/log.txt
