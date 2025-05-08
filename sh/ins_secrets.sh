@@ -78,7 +78,7 @@ source  /home/$USER/buckets/b1/secrets.sh
 rm -rf  /home/$USER/tmp
 mkdir -p /home/$USER/tmp
 
-wget https://github.com/$github_usuario-O  /home/$USER/tmp/caca
+wget https://github.com/$github_usuario -O  /home/$USER/tmp/caca
 if [ ! $? -eq 0 ]; then
   rm -rf  /home/$USER/tmp
   echo "Error Fatal: no existe el usuario $github_usuario  en GitHub"
@@ -86,7 +86,7 @@ if [ ! $? -eq 0 ]; then
 fi
 
 
-wget https://github.com/$github_usuario/$github_catedra_repo
+wget https://github.com/$github_usuario/$github_catedra_repo -O  /home/$USER/tmp/caca
 if [ ! $? -eq 0 ]; then
   rm -rf  /home/$USER/tmp
   echo "Error Fatal: no existe el repo $github_usuario/$github_catedra_repo  en GitHub"
