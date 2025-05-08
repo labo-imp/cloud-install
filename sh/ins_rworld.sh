@@ -71,7 +71,7 @@ gcloud compute firewall-rules create rstudio --allow tcp:80  --source-tags=insta
 
 
 systemctl is-active --quiet rstudio-server
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "servicio rstudio-server no esta funcionando"
 else
   fecha=$(date +"%Y%m%d %H%M%S")
