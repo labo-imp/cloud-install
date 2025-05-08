@@ -1,7 +1,7 @@
 #!/bin/bash
 # fecha revision   2025-05-06  13:01
 
-logito="ins_zulip.txt"
+logito="ins_kaggle.txt"
 
 # requiero que system este instalado
 [ ! -e "/home/$USER/log/ins_system.txt" ] && exit 1
@@ -12,7 +12,7 @@ logito="ins_zulip.txt"
 R_LIBS_USER=/home/$USER/.local/lib/R/site-library
 export R_LIBS_USER
 
-Rscript --vanilla  /home/$USER/cloud-install/r/100_kaggle_prueba.r
+Rscript --vanilla  /home/$USER/cloud-install/r/100_kaggle_prueba-rosario.r
 
 fecha=$(date +"%Y%m%d %H%M%S")
 echo $fecha > /home/$USER/log/$logito
