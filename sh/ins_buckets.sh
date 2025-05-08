@@ -49,6 +49,14 @@ sudo  systemctl start  buckets
 
 bitacora   "buckets"
 
-# grabo
-fecha=$(date +"%Y%m%d %H%M%S")
-echo $fecha > /home/$USER/log/$logito
+# finalizo
+systemctl is-active --quiet buckets.service
+if [ $? -eq 0 ]; then
+    echo "servicio buckets no esta funcionando"
+    exit 1
+else
+  fecha=$(date +"%Y%m%d %H%M%S")
+  echo $fecha > /home/$USER/log/$logito
+  exit 0
+fi
+
