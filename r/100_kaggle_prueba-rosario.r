@@ -17,7 +17,7 @@ getandincrement <- function( nom_archivo )
 }
 #------------------------------------------------------------------------------
 
-generarmodelo <- function( pmodalidad, param )
+generarmodelo <- function( param )
 {
   # cargo el dataset pequeno
   dataset <- fread( paste0("~/datasets/dataset_pequeno.csv" ) )
@@ -41,22 +41,25 @@ generarmodelo <- function( pmodalidad, param )
       type = "prob"
   )
 
-  # agrego a dapply una columna nueva que es la probabilidad de BAJA+2
-  dapply[, prob_baja2 := prediccion[, "BAJA+2"]]
+  # genero la prediccion
+  tb_prediccion <- as.data.table(list( 
+    "numero_de_cliente" = dapply$numero_de_cliente,
+    "prob"=prediccion[, "BAJA+2"] 
+  ))
 
   # solo le envio estimulo a los registros
   #  con probabilidad de BAJA+2 mayor  a  1/40
-  dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
+  tb_prediccion[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 
   # archivo de salida
   contador <- getandincrement("contador.yml")
-  archivo_submit <- paste0( "K100_", pmodalidad, "_",
+  archivo_submit <- paste0( "K100_"
      sprintf("%.3d", contador),
      ".csv"
   )
 
   # solo los campos para Kaggle
-  fwrite(dapply[, list(numero_de_cliente, Predicted)],
+  fwrite(tb_prediccion[, list(numero_de_cliente, Predicted)],
          file = archivo_submit,
          sep = ","
   )
@@ -105,17 +108,10 @@ param_vivencial <- list()
 set.seed( Sys.time() )
 
 # modelo vivencial
-param_vivencial$cp <- -1
-param_vivencial$maxdepth <- sample( 4:10, 1 )
-param_vivencial$minsplit <- sample( 50:500, 1 )
-param_vivencial$minbucket <- sample( 1:(param_vivencial$minsplit/2), 1 )
-gan_vivencial <- generarmodelo( "vivencial", param_vivencial )
-
-# ahora el modelo conceptual
-param_conceptual <- copy(param_vivencial)
-# para el dataet conceptual, minsplit y minbucket van a la quinta parte
-param_conceptual$minsplit <- round(param_conceptual$minsplit/5)
-param_conceptual$minbucket <- round(param_conceptual$minbucket/5)
-gan_conceptual <- generarmodelo( "conceptual", param_conceptual )
+param$cp <- -1
+param$maxdepth <- sample( 4:10, 1 )
+param$minsplit <- sample( 50:500, 1 )
+param$minbucket <- sample( 1:(param$minsplit/2), 1 )
+gan <- generarmodelo( param )
 
 quit( save="no" )
