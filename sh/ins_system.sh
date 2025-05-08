@@ -9,6 +9,9 @@ logito="ins_system.txt"
 # requiero que architecture este instalado
 [ ! -e "/home/$USER/log/ins_architecture.txt" ] && exit 1
 
+# requiero que secrets este instalado
+[ ! -e "/home/$USER/log/ins_secrets.txt" ] && exit 1
+
 
 source  /home/$USER/cloud-install/sh/common.sh
 
