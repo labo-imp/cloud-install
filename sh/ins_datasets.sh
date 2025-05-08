@@ -24,14 +24,14 @@ mkdir  -p  /home/$USER/buckets/b1/log
 cd  /home/$USER/buckets/b1/datasets
 
 if [ ! -e "$dataset1" ]; then
-  wget  $webfiles/"$dataset1"  -O  $dataset1
+  wget  $webfiles/"$dataset1"  -O  "$dataset1"
   if [ ! $? -eq 0 ]; then
-    rm  $dataset1
+    rm  "$dataset1"
   fi
 fi
 
 if [ ! -e "$dataset2" ]; then
-  wget  $webfiles/"$dataset2"  -O  $dataset2
+  wget  $webfiles/"$dataset2"  -O  "$dataset2"
   if [ ! $? -eq 0 ]; then
     rm  $dataset2
   fi

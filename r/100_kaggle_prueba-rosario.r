@@ -104,10 +104,10 @@ if( !file.exists( "contador.yml" ) )
 }
 
 # genero al azar maxdepth, minsplit y minbucket
-param_vivencial <- list()
 set.seed( Sys.time() )
 
-# modelo vivencial
+# modelo
+param <- list()
 param$cp <- -1
 param$maxdepth <- sample( 4:10, 1 )
 param$minsplit <- sample( 50:500, 1 )
