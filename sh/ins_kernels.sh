@@ -75,7 +75,7 @@ sudo  systemctl start jupyterlab
 bitacora   "kernels"
 
 systemctl is-active --quiet jupyterlab.service
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "servicio jupyterlab no esta funcionando"
     exit 1
 else
