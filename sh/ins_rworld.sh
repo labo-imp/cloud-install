@@ -36,7 +36,7 @@ sudo DEBIAN_FRONTEND=noninteractive add-apt-repository --yes "deb https://cloud.
 
 sudo DEBIAN_FRONTEND=noninteractive  apt install --yes --no-install-recommends r-base  r-base-dev  r-cran-devtools
 
-Rscript --verbose  /home/$USER/cloud-install/r/test_rlang.r
+Rscript --verbose  /home/$USER/cloud-install/r/test_rlang.r  /home/$USER/log/ins_rlang.txt
 
 bitacora   "rlang"
 
