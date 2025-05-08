@@ -53,7 +53,7 @@ sleep 10
 
 # finalizo
 systemctl is-active --quiet buckets.service
-if [ $? -eq 0 ]; then
+if [ ! $? -eq 0 ]; then
     echo "servicio buckets no esta funcionando"
     exit 1
 else
