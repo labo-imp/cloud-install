@@ -1,6 +1,7 @@
 #!/bin/bash
 # fecha revision   2025-05-06  13:01
 
+# lo minimo necesario antes de secrets
 /home/$USER/cloud-install/sh/ins_architecture.sh
 /home/$USER/cloud-install/sh/ins_buckets.sh
 
@@ -11,13 +12,16 @@ if [ $? -eq 0 ]; then
 fi
 
 
+# instalacion pesada
 /home/$USER/cloud-install/sh/ins_system.sh
 /home/$USER/cloud-install/sh/ins_gnome.sh
 
+# tonterias
 /home/$USER/cloud-install/sh/ins_sysstat.sh
 /home/$USER/cloud-install/sh/ins_expshared.sh
 /home/$USER/cloud-install/sh/ins_datasets.sh
 
+# los lenguajes
 /home/$USER/cloud-install/sh/ins_rworld.sh
 /home/$USER/cloud-install/sh/ins_python.sh
 /home/$USER/cloud-install/sh/ins_julia.sh
@@ -25,6 +29,8 @@ fi
 /home/$USER/cloud-install/sh/ins_jupyterlab.sh
 /home/$USER/cloud-install/sh/ins_kernels.sh
 
+
+# utilidades
 /home/$USER/cloud-install/sh/ins_memcpu.sh
 /home/$USER/cloud-install/sh/ins_mlflow.sh
 /home/$USER/cloud-install/sh/ins_cambiar_claves.sh
