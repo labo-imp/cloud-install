@@ -35,8 +35,8 @@ fi
 /home/$USER/cloud-install/sh/ins_datasets.sh
 
 # los lenguajes y sus paquetes
-/home/$USER/cloud-install/sh/ins_rworld.sh
 /home/$USER/cloud-install/sh/ins_pyworld.sh
+/home/$USER/cloud-install/sh/ins_rworld.sh
 /home/$USER/cloud-install/sh/ins_jlworld.sh
 
 /home/$USER/cloud-install/sh/ins_jupyterlab.sh
