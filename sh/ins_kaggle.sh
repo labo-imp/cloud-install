@@ -1,0 +1,19 @@
+#!/bin/bash
+# fecha revision   2025-05-06  13:01
+
+logito="ins_zulip.txt"
+
+# requiero que system este instalado
+[ ! -e "/home/$USER/log/ins_system.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_secrets.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_pyworld.txt" ] && exit 1
+
+
+R_LIBS_USER=/home/$USER/.local/lib/R/site-library
+export R_LIBS_USER
+
+Rscript --vanilla  /home/$USER/cloud-install/r/100_kaggle_prueba.r
+
+fecha=$(date +"%Y%m%d %H%M%S")
+echo $fecha > /home/$USER/log/$logito
+exit 0
