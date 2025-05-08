@@ -7,7 +7,7 @@ logito="ins_secrets.txt"
 
 
 # requiero que buckets este instalado
-[ ! -e "/home/$USER/log/ins_buckets.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_buckets.txt" ] && exit 0
 
 
 source  /home/$USER/cloud-install/sh/common.sh
