@@ -75,7 +75,6 @@ generarmodelo <- function( param )
 
   comando <- paste0( "~/install/proc_kaggle_submit.sh ",
       "TRUE ",
-      pmodalidad, " ",
       archivo_submit, " ",
       comentario
   )
