@@ -50,5 +50,6 @@ fi
 
 
 /home/$USER/cloud-install/sh/ins_zulip.sh
+/home/$USER/cloud-install/sh/ins_kaggle.sh
 
 /home/$USER/cloud-install/sh/ins_gnome_apps.sh
