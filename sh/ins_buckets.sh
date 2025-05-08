@@ -6,7 +6,7 @@ logito="ins_buckets.txt"
 [ -e "/home/$USER/log/$logito" ] && exit 1
 
 # requiero que architecture este instalado
-[ ! -e "/home/$USER/log/ins_architecture.txt" ] && exit 1
+[ ! -e "/home/$USER/log/ins_architecture.txt" ] && exit 0
 
 
 source  /home/$USER/cloud-install/sh/common.sh
