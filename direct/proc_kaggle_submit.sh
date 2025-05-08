@@ -3,9 +3,8 @@
 source /home/$USER/install/common.sh
 
 hacersubmit=$1
-modalidad=$2
-archivo=$3
-comentario=$4
+archivo=$2
+comentario=$3
 
 echoerr() { printf "\033[0;31m%s\n\033[0m" "$*" >&2; }
 
