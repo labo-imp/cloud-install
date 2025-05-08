@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-zulip_email="gustavo_denicolay@gmail.com"
+zulip_email="gustavo.denicolay@gmail.com"
 
 github_usuario="itba-ecd"
 github_token="ghp_USfVVqlKlpAZ1IXbBEEsdhLAQkMNR00Lfzmg"
