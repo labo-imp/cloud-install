@@ -1,0 +1,13 @@
+[Unit]
+Description=runatboot
+After=buckets.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/$USER/install/runatboot.sh
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target

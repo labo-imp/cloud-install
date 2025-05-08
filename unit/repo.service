@@ -1,0 +1,12 @@
+[Unit]
+Description=repo
+
+[Service]
+Type=oneshot
+ExecStart=/home/$USER/install/startup_repos.sh
+WorkingDirectory=/home/$USER/
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=default.target

@@ -22,10 +22,51 @@ bitacora   "R  kernel"
 #------------------------------------------------------------------------------
 # Agrego el kernel de Julia a Jupyterlab
 
-chmod  u+x      /home/$USER/cloud-install/jl/instalar_paquetes_julia_2.jl
 /home/$USER/.juliaup/bin/julia   /home/$USER/cloud-install/jl/instalar_paquetes_julia_2.jl
 
 bitacora   "Julia kernel"
+
+#------------------------------------------------------------------------------
+# Define home directory and data directory (adjust to your needs)
+
+mkdir  -p /home/$USER/.jupyter/
+USER_HOME_DIR=$(echo ~)
+DATA_DIR="$USER_HOME_DIR"/
+# Create the data directory
+
+#------------------------------------------------------------------------------
+# El servicio de Jupyter Lab
+
+# password default
+mkdir  -p /home/$USER/.jupyter
+cat > /home/$USER/.jupyter/jupyter_server_config.json <<FILE
+{
+  "IdentityProvider": {
+    "hashed_password": "argon2:$argon2id$v=19$m=10240,t=10,p=8$KuB64Bj/00OM/8CMhHaLPA$6yhxYaw+uQ+nl1GwDQObfuP8tG8ck1sjKIlF8ySLP/E"
+  }
+} 
+FILE
+chmod  0600    /home/$USER/.jupyter/jupyter_server_config.json
+
+
+cat > /home/$USER/install/jupyterlab.sh  <<FILE
+#!/bin/bash
+source /home/$USER/.venv/bin/activate
+/home/$USER/.venv/bin/jupyter-lab --no-browser --port=8888 --ip=0.0.0.0 --NotebookApp.token= --notebook-dir=/home/$USER/
+FILE
+chmod  u+x    /home/$USER/install/jupyterlab.sh
+
+
+
+envsubst < /home/$USER/cloud-install/unit/jupyterlab.service   >   /home/$USER/install/jupyterlab.service
+sudo  cp   /home/$USER/install/jupyterlab.service   /etc/systemd/system/
+sudo  systemctl enable /etc/systemd/system/jupyterlab.service
+sudo  systemctl daemon-reload
+sudo  systemctl start jupyterlab
+# el servicio aun NO esta corriendo
+
+# systemctl status jupyterlab
+
 
 bitacora   "kernels"
 
