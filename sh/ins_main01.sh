@@ -9,21 +9,25 @@ mkdir  -p  /home/$USER/log
 
 sudo  apt-get --yes  install  git
 
-repo="https://github.com/labo-imp/cloud-install"
-github_user="labo-imp"
-github_repo="cloud-install"
-
+github_catedra_user="labo-imp"
+github_catedra_repo="cloud-install"
 
 # clono el repo de instalacion
 rm -rf /home/$USER/cloud-install
 cd
-git clone  https://github.com/"$github_user"/"$github_repo".git   cloud-install
+git clone  https://github.com/"$github_catedra_user"/"$github_catedra_repo".git   cloud-install
+
+# permisos de ejecucion
 chmod u+x  /home/$USER/cloud-install/sh/*.sh
 chmod u+x  /home/$USER/cloud-install/jl/*.jl
-
 chmod u+x  /home/$USER/cloud-install/direct/*.sh
-cp /home/$USER/cloud-install/direct/*  ./cloud-install/
+
+# despersonalizacion
 cp /home/$USER/cloud-install/sh/common_austral.sh   /home/$USER/cloud-install/sh/common.sh
+
+# copia de direct
+cp /home/$USER/cloud-install/direct/*   /home/$USER/install/
+
 
 source  /home/$USER/cloud-install/sh/common.sh
 bitacora   "START  instalar.sh"
@@ -34,4 +38,3 @@ bitacora   "START  instalar.sh"
 
 # llamada dentro de tmux
 tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'
-

@@ -2,29 +2,29 @@
 
 source  /home/$USER/install/common.sh
 
-if [ ! -d /home/$USER/$repo_name ]; then
-    echo "Error Fatal : No existe la carpeta del repositorio /home/$USER/$repo_name"
+if [ ! -d /home/$USER/$github_catedra_repo ]; then
+    echo "Error Fatal : No existe la carpeta del repositorio /home/$USER/$github_catedra_repo"
     exit
 fi
 
-if [ ! -d /home/$USER/$repo_name/src ]; then
-    echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$repo_name/src"
-    exit
-fi
-
-
-if [ ! -d /home/$USER/$repo_name/src/rpart ]; then
-    echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$repo_name/src/rpart"
-    exit
-fi
-
-if [ ! -f /home/$USER/$repo_name/src/rpart/z101_PrimerModelo.R ]; then
-    echo "Error Fatal : No existe el archivo  /home/$USER/$repo_name/src/rpart/z101_PrimerModelo.R"
+if [ ! -d /home/$USER/$github_catedra_repo/src ]; then
+    echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$github_catedra_repo/src"
     exit
 fi
 
 
-cd /home/$USER/$repo_name/
+if [ ! -d /home/$USER/$github_catedra_repo/src/rpart ]; then
+    echo "Error Fatal : No existe la carpeta  del repositorio  /home/$USER/$github_catedra_repo/src/rpart"
+    exit
+fi
+
+if [ ! -f /home/$USER/$github_catedra_repo/src/rpart/z101_PrimerModelo.R ]; then
+    echo "Error Fatal : No existe el archivo  /home/$USER/$github_catedra_repo/src/rpart/z101_PrimerModelo.R"
+    exit
+fi
+
+
+cd /home/$USER/$github_catedra_repo/
 
 git rev-parse
 if [ ! $? -eq 0 ]; then 
@@ -94,13 +94,13 @@ if [ ! -f /home/$USER/install/100_kaggle_prueba.r ]; then
     exit
 fi
 
-cp /home/$USER/install/100_kaggle_prueba.r  /home/$USER/$repo_name/src/rpart
+cp /home/$USER/install/100_kaggle_prueba.r  /home/$USER/$github_catedra_repo/src/rpart
 if [ ! $? -eq 0 ]; then 
   echo "Error : No se pudo copiar /home/$USER/install/100_kaggle_prueba.r"
   exit
 fi
 
-cd /home/$USER/$repo_name/
+cd /home/$USER/$github_catedra_repo/
 
 MIHOST=\$(echo \$HOSTNAME | /usr/bin/cut -d . -f1)
 
@@ -215,9 +215,9 @@ fi
 
 # cargo lo nuevo
 git checkout \$MIHOST
-git add /home/$USER/$repo_name/src/rpart/100_kaggle_prueba.r
+git add /home/$USER/$github_catedra_repo/src/rpart/100_kaggle_prueba.r
 if [ ! $? -eq 0 ]; then 
-  echo "Fatal Error : git add /home/$USER/$repo_name/src/rpart/100_kaggle_prueba.r"
+  echo "Fatal Error : git add /home/$USER/$github_catedra_repo/src/rpart/100_kaggle_prueba.r"
   exit
 fi
 

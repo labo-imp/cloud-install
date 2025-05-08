@@ -21,6 +21,9 @@ kaggleprueba="100_kaggle_prueba-ba.r"
 github_user="labo-imp"
 repo_name="labo2025ros"
 
+github_catedra_user="labo-imp"
+github_catedra_repo="labo2025ros"
+
 
 export mlflow_usuario="labo2025ros"
 export mlflow_clave="constructivism"

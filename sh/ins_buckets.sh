@@ -5,8 +5,8 @@ logito="ins_buckets.txt"
 # si ya corrio esta seccion, exit
 [ -e "/home/$USER/log/$logito" ] && exit 1
 
-# requiero que el system este instalado
-[ ! -e "/home/$USER/log/ins_system.txt" ] && exit 1
+# requiero que architecture este instalado
+[ ! -e "/home/$USER/log/ins_architecture.txt" ] && exit 1
 
 
 source  /home/$USER/cloud-install/sh/common.sh
