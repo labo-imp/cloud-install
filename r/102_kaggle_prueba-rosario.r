@@ -53,7 +53,7 @@ generarmodelo <- function( param )
 
   # archivo de salida
   contador <- getandincrement("contador.yml")
-  archivo_submit <- paste0( "K100_",
+  archivo_submit <- paste0( "K102_",
      sprintf("%.3d", contador),
      ".csv"
   )
