@@ -3,7 +3,6 @@
 
 logito="ins_datasets.txt"
 # si ya corrio esta seccion, exit
-[ -e "/home/$USER/log/$logito" ] && exit 0
 
 # requiero que el system este instalado
 [ ! -e "/home/$USER/log/ins_system.txt" ] && exit 1
@@ -23,10 +22,36 @@ mkdir  -p  /home/$USER/buckets/b1/exp
 mkdir  -p  /home/$USER/buckets/b1/log
 
 cd  /home/$USER/buckets/b1/datasets
-wget  $webfiles/"$dataset1"  -O  $dataset1
-wget  $webfiles/"$dataset2"  -O  $dataset2
-wget  $webfiles/"$dataset3"  -O  $dataset3
-wget  $webfiles/"$dataset4"  -O  $dataset4
+
+if [ ! -e "$dataset1" ]; then
+  wget  $webfiles/"$dataset1"  -O  $dataset1
+  if [ ! $? -eq 0 ]; then
+    rm  $dataset1
+  fi
+fi
+
+if [ ! -e "$dataset2" ]; then
+  wget  $webfiles/"$dataset2"  -O  $dataset2
+  if [ ! $? -eq 0 ]; then
+    rm  $dataset2
+  fi
+fi
+
+
+if [ ! -e "$dataset3" ]; then
+  wget  $webfiles/"$dataset3"  -O  $dataset3
+  if [ ! $? -eq 0 ]; then
+    rm  $dataset3
+  fi
+fi
+
+if [ ! -e "$dataset4" ]; then
+  wget  $webfiles/"$dataset4"  -O  $dataset4
+  if [ ! $? -eq 0 ]; then
+    rm  $dataset4
+  fi
+fi
+
 
 cp /home/$USER/buckets/b1/datasets/*   /home/$USER/datasets
 
