@@ -3,7 +3,7 @@
 
 logito="ins_architecture.txt"
 # si ya corrio esta seccion, exit
-[ -e "/home/$USER/log/$logito" ] && exit 1
+[ -e "/home/$USER/log/$logito" ] && exit 0
 
 source  /home/$USER/cloud-install/sh/common.sh
 
