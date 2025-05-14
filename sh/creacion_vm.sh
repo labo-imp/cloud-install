@@ -79,30 +79,10 @@ fi
 
 sleep 10
 
+myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
+
+
 gcloud compute ssh "$USER"@instance-instalacion \
     --zone=us-west4-c \
     --project="$myfirstproject" \
     -- bash -s < /home/$USER/cloud-install/sh/ins_main01.sh 
-
-
-myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
-
-gcloud compute ssh "$USER"@instance-instalacion \
-    --zone=us-west4-c \
-    --project="$myfirstproject" \
-    -- bash -c  "tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'"
-
-
-gcloud compute ssh "$USER"@instance-instalacion \
-    --zone=us-west4-c \
-    --project="$myfirstproject" \
-    -- -t \
-    --command="tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'"
-
-
-gcloud compute ssh "$USER"@instance-instalacion \
-    --zone=us-west4-c \
-    --project="$myfirstproject" \
-    -- -t \
-    --command="bash tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh'"
-
