@@ -80,7 +80,7 @@ then
 fi
 
 
-sleep 10
+sleep 30
 
 
 gcloud compute ssh "$USER"@instance-instalacion \
