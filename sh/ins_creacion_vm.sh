@@ -68,7 +68,8 @@ gcloud compute instances create instance-instalacion \
 
 # verifico que existan buckets, sino creo el primero
 
-mybuckets=$(/bin/gsutil ls )
+myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
+mybuckets=$(/bin/gsutil ls --project="$myfirstproject")
 
 if [ "$mybuckets" = "" ];
 then
@@ -79,10 +80,10 @@ fi
 
 sleep 10
 
-myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
-
 
 gcloud compute ssh "$USER"@instance-instalacion \
     --zone=us-west4-c \
     --project="$myfirstproject" \
     -- bash -s < /home/$USER/cloud-install/sh/ins_main01.sh 
+
+exit
