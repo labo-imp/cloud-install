@@ -39,4 +39,5 @@ bitacora   "START  instalar.sh"
 
 
 # llamada dentro de tmux
-tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'
+/home/$USER/cloud-install/sh/ins_tmux_main02.sh
+#tmux new -sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'
