@@ -37,6 +37,3 @@ bitacora   "START  instalar.sh"
 # tmux vim
 /home/$USER/cloud-install/sh/ins_vimtmux.sh
 
-
-# llamada dentro de tmux
-/home/$USER/cloud-install/sh/ins_tmux_main02.sh &
