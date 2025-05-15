@@ -26,6 +26,7 @@ sudo mkdir -p  /mnt/
 sudo mkdir -p  /mnt/gcsfuse/
 sudo mkdir -p  /mnt/alive/
 sudo chown -R  $USER:$USER /mnt/gcsfuse/
+sudo chown -R  $USER:$USER /mnt/alive/
 
 # Preparo para que puedan haber 9 buckets al mismo tiempo
 mkdir  -p  /home/$USER/buckets
@@ -38,6 +39,11 @@ mkdir  -p  /home/$USER/buckets/b6
 mkdir  -p  /home/$USER/buckets/b7
 mkdir  -p  /home/$USER/buckets/b8
 mkdir  -p  /home/$USER/buckets/b9
+
+
+sudo ln -s /home/$USER/   /content
+sudo chown -R  $USER:$USER /content
+
 
 
 sudo  cp   /home/$USER/cloud-install/unit/buckets@.service   /etc/systemd/system/
