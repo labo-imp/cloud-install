@@ -24,6 +24,7 @@ rm   /home/$USER/$gcsfusepack
 
 sudo mkdir -p  /mnt/
 sudo mkdir -p  /mnt/gcsfuse/
+sudo mkdir -p  /mnt/alive/
 sudo chown -R  $USER:$USER /mnt/gcsfuse/
 
 # Preparo para que puedan haber 9 buckets al mismo tiempo
