@@ -107,7 +107,7 @@ int tree_search(const char *const dirpath, int fullscan, time_t t0)
 int files_lastactivity(int fullscan, time_t  t0)
 {
     char* env_user = getenv("USER");
-    static const char * dires[] = { "/dev/pts", "/mnt/gcsfuse", ".virtual_documents", ".local/share/rstudio", 
+    static const char * dires[] = { "/dev/pts", "/mnt", ".virtual_documents", ".local/share/rstudio", 
       ".local/share/jupyter", ".vscode", ".vscode-R", ".config/Code", "labo2025ros" };
 
     int tope = sizeof(dires)/sizeof(char*);
