@@ -1,4 +1,2 @@
 #!/bin/bash
-tmux new-session -d -s sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh'
-
-echo "La Instalacion desatendida ha terminado"
+tmux new-session -d -s sinstalling '/home/$USER/cloud-install/sh/ins_main02.sh; exec $SHELL'
