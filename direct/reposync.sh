@@ -34,7 +34,7 @@ git push  origin  catedra
 
 
 # activo el branch y lo pongo al dia con origin
-git checkout $MIHOST
+git switch -c $MIHOST
 git fetch origin $MIHOST
 git merge  -X theirs   origin/$MIHOST  -m "origin/MIHOST domina a MIHOST"
 git merge  -X theirs  catedra   -m "catedra domina  a MIHOST"
@@ -42,7 +42,7 @@ git merge  -X ours    main      -m "MIHOST domina  a main"
 git push  origin  $MIHOST
 
 # agrego lo nuevo al branch  MIHOST
-git checkout $MIHOST
+git switch -c $MIHOST
 git add .
 git commit -m "auto commit $seq       $fecha"
 git push   origin  $MIHOST
@@ -56,7 +56,8 @@ git push  origin  main
 
 
 # LENTA copia al bucket
-git checkout $MIHOST
+git switch -c  $MIHOST
+git checkout  $MIHOST
 rsync -a /home/$USER/$github_catedra_repo/   /home/$USER/buckets/b1/repos/$github_catedra_repo/  --delete-after  &
 
 
