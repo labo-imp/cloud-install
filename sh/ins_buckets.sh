@@ -22,6 +22,10 @@ sudo  DEBIAN_FRONTEND=noninteractive  dpkg --install $gcsfusepack
 rm   /home/$USER/$gcsfusepack
 
 
+sudo mkdir -p  /mnt/
+sudo mkdir -p  /mnt/gcsfuse/
+sudo chown -R  $USER:$USER /mnt/gcsfuse/
+
 # Preparo para que puedan haber 9 buckets al mismo tiempo
 mkdir  -p  /home/$USER/buckets
 mkdir  -p  /home/$USER/buckets/b1
