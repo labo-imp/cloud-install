@@ -80,7 +80,9 @@ then
 fi
 
 
-sleep 30
+echo
+echo "Esperando 40 segundos a que se inicie  instance-instalacion"
+sleep 40
 
 
 gcloud compute ssh "$USER"@instance-instalacion \
