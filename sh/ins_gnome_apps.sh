@@ -31,9 +31,9 @@ sudo  DEBIAN_FRONTEND=noninteractive  apt-get install --yes brave-browser
 # RStudio desktop (atencion que NO es el servidor)
 cd
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get update
-wget  https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.04.2-764-amd64.deb
-sudo  DEBIAN_FRONTEND=noninteractive  apt-get install  --yes -f ./rstudio-2024.04.2-764-amd64.deb
-rm    rstudio-2024.04.2-764-amd64.deb
+wget  https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.05.0-496-amd64.deb
+sudo  DEBIAN_FRONTEND=noninteractive  apt-get install  --yes -f ./rstudio-2025.05.0-496-amd64.deb
+rm    rstudio-2025.05.0-496-amd64.deb
 
 # bug RStudio desktop que se cuelga al arrancar
 sudo chmod 4755 /usr/lib/rstudio/chrome-sandbox
