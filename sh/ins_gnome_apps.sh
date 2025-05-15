@@ -41,6 +41,9 @@ sudo chmod 4755 /usr/lib/rstudio/chrome-sandbox
 # instalar VSCode -------------------------------------------------------------
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get update
 sudo  apt-get install software-properties-common apt-transport-https wget -y
+sudo snap install --classic code
+sudo cp  /snap/code/193/snap/gui/code.desktop  /usr/share/applications/htop.desktop
+
 wget  -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo  add-apt-repository --yes "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get install --yes code
