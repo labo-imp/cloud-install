@@ -5,7 +5,7 @@ logito="ins_gnome_apps.txt"
 # si ya corrio esta seccion, exit
 [ -e "/home/$USER/log/$logito" ] && exit 0
 
-# requiero que el system este instalado
+# requiero que gnome este instalado
 [ ! -e "/home/$USER/log/ins_gnome.txt" ] && exit 1
 
 
