@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bucket=$(/usr/bin/gsutil ls)
+
 tab="	"
 fecha=$(date +"%Y%m%d %H%M%S")
 echo $fecha$tab$HOSTNAME  >  /home/$USER/install/z-GCshutdown.txt
