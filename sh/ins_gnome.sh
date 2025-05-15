@@ -23,7 +23,8 @@ sudo  DEBIAN_FRONTEND=noninteractive  apt-get --yes  dist-upgrade
 
 #sudo  DEBIAN_FRONTEND=noninteractive  apt-get  install  --yes  kde-plasma-desktop 
 
-sudo  DEBIAN_FRONTEND=noninteractive  apt-get  install --yes  gnome-tweaks  language-pack-gnome-es
+sudo  DEBIAN_FRONTEND=noninteractive  apt-get  install --yes  gnome-tweaks
+sudo  DEBIAN_FRONTEND=noninteractive  apt-get  install --yes  language-pack-gnome
 
 # instalo xrdp para acceder desde Windows por Remote Desktop
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get  install --yes  xrdp
