@@ -10,6 +10,9 @@ mkdir -p /home/$USER/log
 
 MIHOST=$(echo $HOSTNAME | /usr/bin/cut -d . -f1)
 
+
+rm  /mnt/gcsfuse/log.txt
+
 if [ ! -f /home/$USER/log/manual.txt ]; then
 
   if [[ $MIHOST == "zzzzzzzz" ]]; then
