@@ -25,7 +25,7 @@ rsync -a /home/$USER/repos/catedra/   /home/$USER/buckets/b1/repos/catedra/  --d
 cd  /home/$USER/$github_catedra_repo
 
 # catedra nunca tiene problemas
-git checkout catedra
+git checkout catedra || git checkout -b catedra
 git fetch origin catedra
 git merge  -X theirs   origin/catedra  -m "origin/catedra domina a catedra"
 git fetch upstream
@@ -34,7 +34,7 @@ git push  origin  catedra
 
 
 # activo el branch y lo pongo al dia con origin
-git switch -c $MIHOST
+git checkout $MIHOST || git checkout -b $MIHOST
 git fetch origin $MIHOST
 git merge  -X theirs   origin/$MIHOST  -m "origin/MIHOST domina a MIHOST"
 git merge  -X theirs  catedra   -m "catedra domina  a MIHOST"
@@ -42,7 +42,7 @@ git merge  -X ours    main      -m "MIHOST domina  a main"
 git push  origin  $MIHOST
 
 # agrego lo nuevo al branch  MIHOST
-git switch -c $MIHOST
+git checkout $MIHOST || git checkout -b $MIHOST
 git add .
 git commit -m "auto commit $seq       $fecha"
 git push   origin  $MIHOST
@@ -56,8 +56,7 @@ git push  origin  main
 
 
 # LENTA copia al bucket
-git switch -c  $MIHOST
-git checkout  $MIHOST
+git checkout $MIHOST || git checkout -b $MIHOST
 rsync -a /home/$USER/$github_catedra_repo/   /home/$USER/buckets/b1/repos/$github_catedra_repo/  --delete-after  &
 
 
