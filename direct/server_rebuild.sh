@@ -62,11 +62,11 @@ cp /home/$USER/cloud-install/direct/*   /home/$USER/install/
 source  /home/$USER/cloud-install/sh/common.sh
 
 # ejecuto  autoexec.sh  es LA oportunidad de corregir
-rm /home/$USER/install/autoexec.sh
-cp /home/$USER/cloud-install/direct/autoexec.sh   /home/$USER/install/autoexec.sh
-chmod u+x /home/$USER/install/autoexec.sh
+rm /home/$USER/install/autoexec_pre.sh
+cp /home/$USER/cloud-install/direct/autoexec_pre.sh   /home/$USER/install/autoexec_pre.sh
+chmod u+x /home/$USER/install/autoexec_pre.sh
 cd /home/$USER/install/
-./autoexec.sh
+./autoexec_pre.sh
 
 /usr/bin/Rscript  /home/$USER/install/startup_mlflow.r
 
