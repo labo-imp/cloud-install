@@ -61,8 +61,9 @@ cp /home/$USER/cloud-install/direct/*   /home/$USER/install/
 
 source  /home/$USER/cloud-install/sh/common.sh
 
+# ejecuto  autoexec.sh  es LA oportunidad de corregir
 rm /home/$USER/install/autoexec.sh
-cp /home/$USER/cloud-install/direct/autoexec.sh  -O /home/$USER/install/autoexec.sh
+cp /home/$USER/cloud-install/direct/autoexec.sh   /home/$USER/install/autoexec.sh
 chmod u+x /home/$USER/install/autoexec.sh
 cd /home/$USER/install/
 ./autoexec.sh
@@ -70,4 +71,4 @@ cd /home/$USER/install/
 /usr/bin/Rscript  /home/$USER/install/startup_mlflow.r
 
 
-cp /home/$USER/cloud-install/direct/cambiar_claves.sh  -O /home/$USER/cambiar_claves.sh
+cp /home/$USER/cloud-install/direct/cambiar_claves.sh   /home/$USER/cambiar_claves.sh
