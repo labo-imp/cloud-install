@@ -70,7 +70,7 @@ gcloud compute instances create instance-instalacion \
 
 # verifico que existan buckets, sino creo el primero
 
-myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
+myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )
 gcloud config set project $myfirstproject
 
 mybuckets=$(/bin/gsutil ls)
