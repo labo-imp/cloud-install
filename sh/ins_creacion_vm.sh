@@ -41,12 +41,11 @@ bitacora   "START  instalar.sh"
 
 # quitar cran para produccion
 # myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )  # filtrado
-gcloud projects create 'My First Project'  --enable-cloud-apis
-gcloud config set project "My First Project"
-gcloud services enable compute.googleapis.com
-
 
 myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )  # sin filtrar
+gcloud config set project $myfirstproject
+gcloud services enable compute.googleapis.com
+
 
 myserviceaccount=$(gcloud iam service-accounts list --format='value(EMAIL)' | head -1)
  
