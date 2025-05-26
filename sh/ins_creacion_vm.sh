@@ -41,8 +41,8 @@ bitacora   "START  instalar.sh"
 
 # quitar cran para produccion
 # myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )  # filtrado
-gcloud projects create proj-labo1  --enable-cloud-apis
-gcloud config set project proj-labo1
+gcloud projects create 'My First Project'  --enable-cloud-apis
+gcloud config set project "My First Project"
 gcloud services enable compute.googleapis.com
 
 
@@ -88,7 +88,7 @@ echo "Esperando 40 segundos a que se inicie  instance-instalacion"
 sleep 40
 
 
-myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
+myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )
 gcloud compute ssh "$USER"@instance-instalacion \
     --zone=us-west4-c \
     --project="$myfirstproject" \
