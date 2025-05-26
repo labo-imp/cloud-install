@@ -1,6 +1,6 @@
 #!/bin/bash
 
-myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )
+myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )
 gcloud config set project $myfirstproject
 
 gcloud compute ssh "$USER"@instance-instalacion \
