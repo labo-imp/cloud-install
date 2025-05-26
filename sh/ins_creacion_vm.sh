@@ -41,6 +41,8 @@ bitacora   "START  instalar.sh"
 
 # quitar cran para produccion
 # myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' --filter=cran | head -1 )  # filtrado
+gcloud projects create proj-labo1  --enable-cloud-apis
+
 myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )  # sin filtrar
 
 myserviceaccount=$(gcloud iam service-accounts list --format='value(EMAIL)' | head -1)
