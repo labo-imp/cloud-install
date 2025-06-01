@@ -2,6 +2,18 @@
 
 # este script corre en Cloud Shell
 
+# habilitacion de servicios
+gcloud --quiet services enable  iam.googleapis.com
+gcloud --quiet services enable  compute.googleapis.com
+gcloud --quiet services enable  cloudapis.googleapis.com
+gcloud --quiet services enable  cloudresourcemanager.googleapis.com
+gcloud --quiet services enable  compute.googleapis.com
+gcloud --quiet services enable  iamcredentials.googleapis.com
+gcloud --quiet services enable  storage-api.googleapis.com
+gcloud --quiet services enable  storage-component.googleapis.com
+gcloud --quiet services enable  storage.googleapis.com
+
+
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get update
 
 rm -rf  /home/$USER/install
@@ -44,7 +56,6 @@ bitacora   "START  instalar.sh"
 
 myfirstproject=$(gcloud projects list  --format='value(PROJECT_ID)' | head -1 )  # sin filtrar
 gcloud config set project $myfirstproject
-gcloud services enable compute.googleapis.com
 
 
 myserviceaccount=$(gcloud iam service-accounts list --format='value(EMAIL)' | head -1)
