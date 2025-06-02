@@ -174,13 +174,13 @@ fi
 # activo el branch
 git checkout $MIHOST
 if [ ! $? -eq 0 ]; then 
-  echo "Fatal Error : git checkout \$MIHOST"
+  echo "Fatal Error : git checkout $MIHOST"
   exit 1
 fi
 
 git pull origin $MIHOST
 if [ ! $? -eq 0 ]; then 
-  echo "Fatal Error : git pull origin \$MIHOST"
+  echo "Fatal Error : git pull origin $MIHOST"
   exit 1
 fi
 
@@ -198,7 +198,7 @@ fi
 
 git push  origin  $MIHOST
 if [ ! $? -eq 0 ]; then 
-  echo "Fatal Error : git push  origin  \$MIHOST"
+  echo "Fatal Error : git push  origin  $MIHOST"
   exit 1
 fi
 
@@ -206,7 +206,7 @@ git checkout main
 
 git merge  -X theirs  $MIHOST   -m "MIHOST domina  a main"
 if [ ! $? -eq 0 ]; then 
-  echo "Fatal Error : git merge  -X theirs  \$MIHOST   -m 'MIHOST domina  a main'"
+  echo "Fatal Error : git merge  -X theirs  $MIHOST   -m 'MIHOST domina  a main'"
   exit 1
 fi
 
