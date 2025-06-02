@@ -30,9 +30,9 @@ sudo  DEBIAN_FRONTEND=noninteractive  apt install --no-install-recommends softwa
 # add the signing key (by Michael Rutter) for these repos
 # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
 # Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
-wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+#wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-sudo DEBIAN_FRONTEND=noninteractive add-apt-repository --yes "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+#sudo DEBIAN_FRONTEND=noninteractive add-apt-repository --yes "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
 sudo DEBIAN_FRONTEND=noninteractive  apt install --yes --no-install-recommends r-base  r-base-dev  r-cran-devtools
 
@@ -42,12 +42,14 @@ bitacora   "rlang"
 
 #------------------------------------------------------------------------------
 # Instalo RStudio Server    Version:  2024.12.1 | Released:  2025-02-13--------
+# Instalo RStudio Server    Version:  2025.05.0+496 | Released:  2025-05-05----
 # Doc  https://rstudio.com/products/rstudio/download-server/debian-ubuntu/
 
 [ ! -e "/home/$USER/log/ins_rlang.txt" ] && exit 1
 
 cd
 rstudiopack="rstudio-server-2024.12.1-563-amd64.deb"
+rstudiopack="rstudio-server-2025.05.0-496-amd64.deb"
 
 
 wget  https://download2.rstudio.org/server/jammy/amd64/"$rstudiopack"
