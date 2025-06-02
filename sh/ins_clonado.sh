@@ -9,7 +9,7 @@ logito="ins_clonado.txt"
 [ ! -e "/home/$USER/log/ins_rlang.txt" ] && exit 1
 
 
-MIHOST=$(echo \$HOSTNAME | /usr/bin/cut -d . -f1)
+MIHOST=$(echo $HOSTNAME | /usr/bin/cut -d . -f1)
 
 
 # mi repositorio
@@ -32,9 +32,9 @@ git push --set-upstream origin  main
 
 # activo el branch
 git checkout main
-git branch   \$MIHOST
-git checkout \$MIHOST
-git push origin \$MIHOST
+git branch   $MIHOST
+git checkout $MIHOST
+git push origin $MIHOST
 
 
 bitacora   "clonado"
