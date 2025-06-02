@@ -63,10 +63,6 @@ gsettings set org.gnome.desktop.session idle-delay 600
 
 bitacora   "gnome"
 
-# Used 9.9 GB
-
-bitacora   "gnome"
-
 # grabo
 fecha=$(date +"%Y%m%d %H%M%S")
 echo $fecha > /home/$USER/log/$logito
