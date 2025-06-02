@@ -8,7 +8,7 @@ logito="ins_kaggle.txt"
 [ ! -e "/home/$USER/log/ins_secrets.txt" ] && exit 1
 [ ! -e "/home/$USER/log/ins_pyworld_inicial.txt" ] && exit 1
 
-
+source /home/$USER/.venv/bin/activate
 R_LIBS_USER=/home/$USER/.local/lib/R/site-library
 export R_LIBS_USER
 

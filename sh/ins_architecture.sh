@@ -18,7 +18,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=nonin
 
 
 # arquitectura
-sudo  DEBIAN_FRONTEND=noninteractive  apt-get update  && sudo dpkg --add-architecture  i386
+#sudo  DEBIAN_FRONTEND=noninteractive  apt-get update  && sudo dpkg --add-architecture  i386
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get --yes install  software-properties-common
 sudo  DEBIAN_FRONTEND=noninteractive  apt-get --yes install  build-essential
 
