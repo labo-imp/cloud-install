@@ -25,4 +25,4 @@ if  [[ $hacersubmit  == "TRUE" ]] ; then
    > /dev/null
 fi
 
-/home/$USER/install/list  \$archivo
+/home/$USER/install/list  $archivo
