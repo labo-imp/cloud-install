@@ -1,6 +1,7 @@
 [Unit]
 Description=runatboot
-After=buckets@%i.service Requires=services_recrear@%i.service
+After=buckets@%i.service
+Requires=services_recrear@%i.service
 
 [Service]
 Type=oneshot
