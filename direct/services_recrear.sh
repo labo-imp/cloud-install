@@ -22,6 +22,7 @@ if [ ! $? -eq 0 ]; then
 fi
 
 sudo  cp  /home/$USER/cloud-install/unit/*@.service   /etc/systemd/system/
+sudo  systemctl daemon-reload
 
 # permisos de ejecucion
 chmod u+x  /home/$USER/cloud-install/sh/*.sh
