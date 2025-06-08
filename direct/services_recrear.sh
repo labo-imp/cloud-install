@@ -28,6 +28,7 @@ chmod u+x  /home/$USER/cloud-install/sh/*.sh
 chmod u+x  /home/$USER/cloud-install/jl/*.jl
 chmod u+x  /home/$USER/cloud-install/direct/*.sh
 
+
 # despersonalizacion
 mkdir -p /home/$USER/install/
 cp /home/$USER/cloud-install/sh/common_austral.sh   /home/$USER/cloud-install/sh/common.sh
@@ -37,6 +38,10 @@ cp /home/$USER/cloud-install/sh/common.sh  /home/$USER/install/
 if [ -e /home/$USER/cloud-install/direct/services_recrear.sh ]; then
   cp /home/$USER/cloud-install/direct/services_recrear.sh  /home/$USER/install/
 fi
+
+# copia de direct
+cp /home/$USER/cloud-install/direct/*   /home/$USER/install/
+
 
 # shared dirs
 source  /home/$USER/install/common.sh
