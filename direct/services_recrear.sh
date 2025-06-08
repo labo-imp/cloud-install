@@ -23,6 +23,7 @@ fi
 
 sudo  cp  /home/$USER/cloud-install/unit/*@.service   /etc/systemd/system/
 sudo  systemctl daemon-reload
+sudo  systemctl enable  runatboot@$USER.service
 
 # permisos de ejecucion
 chmod u+x  /home/$USER/cloud-install/sh/*.sh
