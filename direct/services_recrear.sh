@@ -21,6 +21,7 @@ if [ ! $? -eq 0 ]; then
   exit 1
 fi
 
+sudo  cp  /home/$USER/cloud-install/unit/*@.service   /etc/systemd/system/
 
 # permisos de ejecucion
 chmod u+x  /home/$USER/cloud-install/sh/*.sh
