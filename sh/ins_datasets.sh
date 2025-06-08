@@ -39,14 +39,14 @@ fi
 
 
 if [ ! -e "$dataset3" ]; then
-  wget --quiet  $webfiles/"$dataset3"  -O  $dataset3
+  wget --quiet  $webfiles/"$dataset3"  -O  "$dataset3"
   if [ ! $? -eq 0 ]; then
     rm  $dataset3
   fi
 fi
 
 if [ ! -e "$dataset4" ]; then
-  wget --quiet  $webfiles/"$dataset4"  -O  $dataset4
+  wget --quiet  $webfiles/"$dataset4"  -O  "$dataset4"
   if [ ! $? -eq 0 ]; then
     rm  $dataset4
   fi
