@@ -45,7 +45,7 @@ envsubst < /home/$USER/cloud-install/cfg/expshared_cred.txt   >   /home/$USER/in
 rm /home/$USER/install/memcpu  /home/$USER/install/settimeout
 gcc -Wall /home/$USER/cloud-install/c/memcpu.cpp   -o /home/$USER/install/memcpu `pkg-config --libs gio-2.0 --cflags`
 gcc  /home/$USER/cloud-install/c/settimeout.cpp   -o /home/$USER/install/settimeout
-cp /home/$USER/cloud-install/sh/settimeout.sh  /home/$USER/install/
+cp /home/$USER/cloud-install/direct/settimeout.sh  /home/$USER/install/
 
 # mlflow
 cp /home/$USER/cloud-install/r/startup_mlflow.r   /home/$USER/install
