@@ -21,7 +21,12 @@ mkdir  -p  /home/$USER/buckets/b1/datasets
 mkdir  -p  /home/$USER/buckets/b1/exp
 mkdir  -p  /home/$USER/buckets/b1/log
 
+cd /home/$USER/datasets/
+find . -type f -size 0b -delete
+
 cd  /home/$USER/buckets/b1/datasets
+find . -type f -size 0b -delete
+
 
 if [ ! -e "$dataset1" ]; then
   wget --quiet --tries=3  $webfiles/"$dataset1"  -O  "$dataset1"
