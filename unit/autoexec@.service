@@ -6,6 +6,8 @@ After=services_recrear@%i.service  buckets@%i.service
 Type=oneshot
 ExecStart=/home/%i/cloud-install/direct/autoexec.sh
 WorkingDirectory=/home/%i/
+User=%i
+Group=%i
 
 [Install]
 WantedBy=default.target
